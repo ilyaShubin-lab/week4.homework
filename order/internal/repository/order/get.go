@@ -5,10 +5,11 @@ import (
 	"errors"
 	"fmt"
 
+	"github.com/jackc/pgx/v5"
+
 	"boilerplates/order/internal/model"
 	"boilerplates/order/internal/repository/converter"
 	repoModel "boilerplates/order/internal/repository/model"
-	"github.com/jackc/pgx/v5"
 )
 
 func (r *repository) Get(ctx context.Context, orderUUID string) (model.Order, error) {

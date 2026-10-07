@@ -1,8 +1,9 @@
 package part
 
 import (
-	"boilerplates/inventory/internal/model"
 	"github.com/stretchr/testify/mock"
+
+	"boilerplates/inventory/internal/model"
 )
 
 func (s *ServiceSuite) TestGetSuccess() {

@@ -3,8 +3,9 @@ package part
 import (
 	"testing"
 
-	"boilerplates/inventory/internal/repository/mocks"
 	"github.com/stretchr/testify/suite"
+
+	"boilerplates/inventory/internal/repository/mocks"
 )
 
 type ServiceSuite struct {

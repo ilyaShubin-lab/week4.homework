@@ -3,8 +3,9 @@ package v1
 import (
 	"testing"
 
-	"boilerplates/payment/internal/service/mocks"
 	"github.com/stretchr/testify/suite"
+
+	"boilerplates/payment/internal/service/mocks"
 )
 
 type APISuite struct {

@@ -3,10 +3,11 @@ package v1
 import (
 	"context"
 
-	"boilerplates/inventory/internal/converter"
-	inventoryv1 "boilerplates/shared/pkg/proto/inventory/v1"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
+
+	"boilerplates/inventory/internal/converter"
+	inventoryv1 "boilerplates/shared/pkg/proto/inventory/v1"
 )
 
 func (a *api) ListParts(

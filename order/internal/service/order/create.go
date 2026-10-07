@@ -3,8 +3,9 @@ package order
 import (
 	"context"
 
-	"boilerplates/order/internal/model"
 	"github.com/google/uuid"
+
+	"boilerplates/order/internal/model"
 )
 
 func (s *service) Create(ctx context.Context, userUUID string, partUUIDs []string) (model.Order, error) {

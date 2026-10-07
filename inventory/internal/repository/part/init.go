@@ -5,8 +5,9 @@ import (
 	"fmt"
 	"time"
 
-	repoModel "boilerplates/inventory/internal/repository/model"
 	"go.mongodb.org/mongo-driver/bson"
+
+	repoModel "boilerplates/inventory/internal/repository/model"
 )
 
 func ptr[T any](v T) *T { return &v }

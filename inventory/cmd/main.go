@@ -8,15 +8,15 @@ import (
 	"os"
 	"time"
 
-	inventoryV1API "boilerplates/inventory/internal/api/inventory/v1"
-	partRepository "boilerplates/inventory/internal/repository/part"
-	partService "boilerplates/inventory/internal/service/part"
-	inventoryV1 "boilerplates/shared/pkg/proto/inventory/v1"
-
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
+
+	inventoryV1API "boilerplates/inventory/internal/api/inventory/v1"
+	partRepository "boilerplates/inventory/internal/repository/part"
+	partService "boilerplates/inventory/internal/service/part"
+	inventoryV1 "boilerplates/shared/pkg/proto/inventory/v1"
 )
 
 const grpcPort = "50051"

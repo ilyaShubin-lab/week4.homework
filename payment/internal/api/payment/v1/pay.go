@@ -4,10 +4,11 @@ import (
 	"context"
 	"errors"
 
-	"boilerplates/payment/internal/model"
-	paymentv1 "boilerplates/shared/pkg/proto/payment/v1"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
+
+	"boilerplates/payment/internal/model"
+	paymentv1 "boilerplates/shared/pkg/proto/payment/v1"
 )
 
 func (a *api) PayOrder(ctx context.Context, req *paymentv1.PayOrderRequest) (*paymentv1.PayOrderResponse, error) {

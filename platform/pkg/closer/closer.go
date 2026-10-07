@@ -9,8 +9,9 @@ import (
 	"sync"
 	"time"
 
-	"boilerplates/platform/pkg/logger"
 	"go.uber.org/zap"
+
+	"boilerplates/platform/pkg/logger"
 )
 
 // shutdownTimeout по умолчанию, можно сделать параметром

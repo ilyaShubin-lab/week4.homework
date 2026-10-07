@@ -3,9 +3,10 @@ package part
 import (
 	"testing"
 
-	"boilerplates/inventory/internal/model"
 	"github.com/stretchr/testify/require"
 	"go.mongodb.org/mongo-driver/bson"
+
+	"boilerplates/inventory/internal/model"
 )
 
 func TestBuildFilter(t *testing.T) {

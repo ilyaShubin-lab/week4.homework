@@ -1,8 +1,9 @@
 package order
 
 import (
-	def "boilerplates/order/internal/repository"
 	"github.com/jackc/pgx/v5/pgxpool"
+
+	def "boilerplates/order/internal/repository"
 )
 
 var _ def.OrderRepository = (*repository)(nil)

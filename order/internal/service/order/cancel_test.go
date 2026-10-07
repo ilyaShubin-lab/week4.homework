@@ -1,8 +1,9 @@
 package order
 
 import (
-	"boilerplates/order/internal/model"
 	"github.com/stretchr/testify/mock"
+
+	"boilerplates/order/internal/model"
 )
 
 func (s *ServiceSuite) TestCancelSuccess() {

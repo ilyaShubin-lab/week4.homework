@@ -101,5 +101,5 @@ formatters: # Форматтеры кода (проверка стиля)
       sections: # Порядок группировки импортов
         - Standard  # Стандартная библиотека
         - Default   # Сторонние зависимости
-        - Prefix(github.com/ilyaShubin-lab/microservices-course)  # Локальные импорты проекта
+        - Prefix(boilerplates)  # Локальные импорты проекта
       no-inline-comments: false  # Разрешить комментарии после импортов (true — запретит)

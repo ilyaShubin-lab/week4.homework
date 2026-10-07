@@ -5,8 +5,9 @@ import (
 	"fmt"
 	"os"
 
-	"boilerplates/payment/internal/config/env"
 	"github.com/joho/godotenv"
+
+	"boilerplates/payment/internal/config/env"
 )
 
 var appConfig *config

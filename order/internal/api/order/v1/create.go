@@ -4,9 +4,10 @@ import (
 	"context"
 	"errors"
 
+	"github.com/google/uuid"
+
 	"boilerplates/order/internal/model"
 	orderV1 "boilerplates/shared/pkg/openapi/order/v1"
-	"github.com/google/uuid"
 )
 
 func (a *api) CreateOrder(ctx context.Context, req *orderV1.CreateOrderRequest) (orderV1.CreateOrderRes, error) {

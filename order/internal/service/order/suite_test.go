@@ -3,9 +3,10 @@ package order
 import (
 	"testing"
 
+	"github.com/stretchr/testify/suite"
+
 	clientMocks "boilerplates/order/internal/client/grpc/mocks"
 	repoMocks "boilerplates/order/internal/repository/mocks"
-	"github.com/stretchr/testify/suite"
 )
 
 type ServiceSuite struct {

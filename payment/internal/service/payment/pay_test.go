@@ -1,8 +1,9 @@
 package payment
 
 import (
-	"boilerplates/payment/internal/model"
 	"github.com/google/uuid"
+
+	"boilerplates/payment/internal/model"
 )
 
 func (s *ServiceSuite) TestPaySucces() {

@@ -4,10 +4,11 @@ import (
 	"context"
 	"errors"
 
+	"github.com/google/uuid"
+
 	"boilerplates/order/internal/converter"
 	"boilerplates/order/internal/model"
 	orderV1 "boilerplates/shared/pkg/openapi/order/v1"
-	"github.com/google/uuid"
 )
 
 func (a *api) PayOrder(ctx context.Context, req *orderV1.PayOrderRequest, params orderV1.PayOrderParams) (orderV1.PayOrderRes, error) {

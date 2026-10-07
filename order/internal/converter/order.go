@@ -1,9 +1,10 @@
 package converter
 
 import (
+	"github.com/google/uuid"
+
 	"boilerplates/order/internal/model"
 	orderV1 "boilerplates/shared/pkg/openapi/order/v1"
-	"github.com/google/uuid"
 )
 
 func OrderToDTO(order model.Order) orderV1.OrderDto {

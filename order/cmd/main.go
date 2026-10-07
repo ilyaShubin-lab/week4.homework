@@ -9,6 +9,11 @@ import (
 	"os"
 	"time"
 
+	"github.com/jackc/pgx/v5/pgxpool"
+	_ "github.com/jackc/pgx/v5/stdlib"
+	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials/insecure"
+
 	orderV1API "boilerplates/order/internal/api/order/v1"
 	inventoryClient "boilerplates/order/internal/client/grpc/inventory/v1"
 	paymentClient "boilerplates/order/internal/client/grpc/payment/v1"
@@ -18,10 +23,6 @@ import (
 	orderV1 "boilerplates/shared/pkg/openapi/order/v1"
 	inventoryv1 "boilerplates/shared/pkg/proto/inventory/v1"
 	paymentv1 "boilerplates/shared/pkg/proto/payment/v1"
-	"github.com/jackc/pgx/v5/pgxpool"
-	_ "github.com/jackc/pgx/v5/stdlib"
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/credentials/insecure"
 )
 
 func main() {

@@ -3,8 +3,9 @@ package order
 import (
 	"errors"
 
-	"boilerplates/order/internal/model"
 	"github.com/stretchr/testify/mock"
+
+	"boilerplates/order/internal/model"
 )
 
 func pendingOrder() model.Order {

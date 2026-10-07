@@ -2,10 +2,12 @@ package payment
 
 import (
 	"context"
-	"log"
+
+	"github.com/google/uuid"
+	"go.uber.org/zap"
 
 	"boilerplates/payment/internal/model"
-	"github.com/google/uuid"
+	"boilerplates/platform/pkg/logger"
 )
 
 func (s *service) Pay(ctx context.Context, orderUUID, userUUID, paymentMethod string) (string, error) {
@@ -13,6 +15,13 @@ func (s *service) Pay(ctx context.Context, orderUUID, userUUID, paymentMethod st
 		return "", model.ErrInvalidPaymentMethod
 	}
 	transactionUUID := uuid.NewString()
-	log.Printf("payment: orderUUID: %s, userUUID: %s, paymentMethod: %s, transactionUUID: %s", orderUUID, userUUID, paymentMethod, transactionUUID)
+
+	logger.Info(ctx, "payment processed",
+		zap.String("order_uuid", orderUUID),
+		zap.String("user_uuid", userUUID),
+		zap.String("payment_method", paymentMethod),
+		zap.String("transaction_uuid", transactionUUID),
+	)
+
 	return transactionUUID, nil
 }

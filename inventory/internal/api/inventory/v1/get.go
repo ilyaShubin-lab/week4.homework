@@ -4,11 +4,12 @@ import (
 	"context"
 	"errors"
 
+	"google.golang.org/grpc/codes"
+	"google.golang.org/grpc/status"
+
 	"boilerplates/inventory/internal/converter"
 	"boilerplates/inventory/internal/model"
 	inventoryv1 "boilerplates/shared/pkg/proto/inventory/v1"
-	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/status"
 )
 
 func (a *api) GetPart(

@@ -5,10 +5,11 @@ import (
 	"fmt"
 	"log"
 
+	"go.mongodb.org/mongo-driver/bson"
+
 	"boilerplates/inventory/internal/model"
 	"boilerplates/inventory/internal/repository/converter"
 	repoModel "boilerplates/inventory/internal/repository/model"
-	"go.mongodb.org/mongo-driver/bson"
 )
 
 func (r *repository) List(ctx context.Context, filter model.PartsFilter) ([]model.Part, error) {
