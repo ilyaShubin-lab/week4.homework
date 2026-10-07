@@ -2,7 +2,7 @@ package main
 
 import (
 	"context"
-	"fmt" // ← новый: для fmt.Errorf
+	"fmt"
 	"log"
 	"net"
 	"os"
@@ -12,6 +12,7 @@ import (
 	partRepository "boilerplates/inventory/internal/repository/part"
 	partService "boilerplates/inventory/internal/service/part"
 	inventoryV1 "boilerplates/shared/pkg/proto/inventory/v1"
+
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"google.golang.org/grpc"

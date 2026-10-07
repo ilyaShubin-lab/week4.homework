@@ -7,3 +7,7 @@ packages:
   boilerplates/payment/internal/service:
     interfaces:
       PaymentService:
+  boilerplates/payment/internal/config:
+    interfaces:
+      LoggerConfig:
+      PaymentGRPCConfig:
