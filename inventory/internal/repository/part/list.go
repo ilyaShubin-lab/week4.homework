@@ -3,13 +3,14 @@ package part
 import (
 	"context"
 	"fmt"
-	"log"
 
 	"go.mongodb.org/mongo-driver/bson"
+	"go.uber.org/zap"
 
 	"boilerplates/inventory/internal/model"
 	"boilerplates/inventory/internal/repository/converter"
 	repoModel "boilerplates/inventory/internal/repository/model"
+	"boilerplates/platform/pkg/logger"
 )
 
 func (r *repository) List(ctx context.Context, filter model.PartsFilter) ([]model.Part, error) {
@@ -22,7 +23,7 @@ func (r *repository) List(ctx context.Context, filter model.PartsFilter) ([]mode
 
 	defer func() {
 		if closeErr := cursor.Close(ctx); closeErr != nil {
-			log.Printf("close mongo cursor: %v", closeErr)
+			logger.Error(ctx, "failed to close mongo cursor", zap.Error(closeErr))
 		}
 	}()
 

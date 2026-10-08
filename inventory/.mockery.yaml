@@ -11,3 +11,8 @@ packages:
   boilerplates/inventory/internal/service:
     interfaces:
       PartService:
+  boilerplates/inventory/internal/config:
+    interfaces:
+      LoggerConfig:
+      InventoryGRPCConfig:
+      MongoConfig:
