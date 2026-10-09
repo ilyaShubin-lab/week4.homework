@@ -678,18 +678,15 @@ tasks:
         echo "🚀 Запуск интеграционных тестов (по тегу integration) для модулей: {{.MODULES}}"
         for mod in {{.MODULES}}; do
           if [ -d "$mod" ]; then
-            echo "🧪 Проверка модуля $mod на наличие интеграционных тестов"
-            
-            # Проверяем наличие файлов с тегом integration
-            HAS_TESTS=$(grep -r "//go:build integration" $mod --include="*.go" | wc -l)
-            
-            if [ "$HAS_TESTS" -eq 0 ]; then
-              echo "⚠️ Модуль $mod не содержит интеграционных тестов (с тегом integration), пропускаем"
-              continue
+            # Ищем файлы с тегом. grep -l выводит только имена файлов,
+            # -q не нужен: нам важен сам факт, что вывод не пустой
+            if grep -rl "//go:build integration" "$mod" --include="*.go" > /dev/null; then
+              echo "▶️ Запуск интеграционных тестов для $mod"
+              # -count=1 отключает кэш: интеграционный тест всегда выполняется по-настоящему
+              go test -v -count=1 -tags=integration ./$mod/... || ERR=1
+            else
+              echo "⚠️ Модуль $mod не содержит интеграционных тестов, пропускаем"
             fi
-            
-            echo "▶️ Запуск интеграционных тестов для $mod"
-            go test -v -tags=integration ./$mod/... || ERR=1
           fi
         done
         exit $ERR
