@@ -44,7 +44,6 @@ func gracefulShutdown() {
 	ctx, cancel := context.WithTimeout(context.Background(), shutdownTimeout)
 	defer cancel()
 
-	// Если closer уже закрывает всё по сигналу — этот вызов дождётся окончания (sync.Once)
 	if err := closer.CloseAll(ctx); err != nil {
 		logger.Error(ctx, "shutdown error", zap.Error(err))
 	}

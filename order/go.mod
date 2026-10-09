@@ -5,7 +5,6 @@ go 1.26.4
 require (
 	github.com/google/uuid v1.6.0
 	github.com/jackc/pgx/v5 v5.11.0
-	github.com/pressly/goose v2.7.0+incompatible
 	github.com/stretchr/testify v1.12.1
 	google.golang.org/grpc v1.83.2
 )

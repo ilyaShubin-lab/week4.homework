@@ -98,7 +98,6 @@ func (d *diContainer) PostgresPool(ctx context.Context) *pgxpool.Pool {
 }
 
 func (d *diContainer) runMigrations(ctx context.Context, pool *pgxpool.Pool) {
-
 	db := stdlib.OpenDBFromPool(pool)
 
 	m := pgMigrator.NewMigrator(db, config.AppConfig().Postgres.MigrationsDir())
@@ -119,7 +118,6 @@ func (d *diContainer) InventoryClient() grpcClient.InventoryClient {
 			grpc.WithTransportCredentials(insecure.NewCredentials()),
 		)
 		if err != nil {
-
 			panic(fmt.Sprintf("failed to create inventory grpc client: %v", err))
 		}
 
