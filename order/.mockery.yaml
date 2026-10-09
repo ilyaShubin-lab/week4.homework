@@ -14,3 +14,10 @@ packages:
   boilerplates/order/internal/service:
     interfaces:
       OrderService:             # для тестов api
+  boilerplates/order/internal/config:
+    interfaces:
+      LoggerConfig:
+      OrderHTTPConfig:
+      InventoryGRPCConfig:
+      PaymentGRPCConfig:
+      PostgresConfig:

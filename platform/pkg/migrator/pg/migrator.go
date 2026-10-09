@@ -1,12 +1,13 @@
 package pg
 
 import (
-	"boilerplates/platform/pkg/migrator"
 	"context"
 	"database/sql"
 	"fmt"
 
 	"github.com/pressly/goose/v3"
+
+	"boilerplates/platform/pkg/migrator"
 )
 
 var _ migrator.Migrator = (*Migrator)(nil)
