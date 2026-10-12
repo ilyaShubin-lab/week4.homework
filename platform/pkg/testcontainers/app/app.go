@@ -113,22 +113,23 @@ func (a *Container) Terminate(ctx context.Context) error {
 }
 
 func streamContainerLogs(ctx context.Context, container testcontainers.Container, out io.Writer) {
+
 	logs, err := container.Logs(ctx)
 	if err != nil {
 		logger.Error(ctx, "failed to get container logs", zap.Error(err))
 		return
 	}
-	defer func() {
-		err = logs.Close()
-		if err != nil {
-			logger.Error(ctx, "failed to close container logs", zap.Error(err))
-		}
-	}()
 
 	go func() {
-		_, err = io.Copy(out, logs)
-		if err != nil && !errors.Is(err, io.EOF) {
-			logger.Error(ctx, "error copying container logs", zap.Error(err))
+
+		defer func() {
+			if closeErr := logs.Close(); closeErr != nil {
+				logger.Error(ctx, "failed to close container logs", zap.Error(closeErr))
+			}
+		}()
+
+		if _, copyErr := io.Copy(out, logs); copyErr != nil && !errors.Is(copyErr, io.EOF) {
+			logger.Error(ctx, "error copying container logs", zap.Error(copyErr))
 		}
 	}()
 }
