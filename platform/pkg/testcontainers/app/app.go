@@ -113,7 +113,6 @@ func (a *Container) Terminate(ctx context.Context) error {
 }
 
 func streamContainerLogs(ctx context.Context, container testcontainers.Container, out io.Writer) {
-
 	logs, err := container.Logs(ctx)
 	if err != nil {
 		logger.Error(ctx, "failed to get container logs", zap.Error(err))
@@ -121,7 +120,6 @@ func streamContainerLogs(ctx context.Context, container testcontainers.Container
 	}
 
 	go func() {
-
 		defer func() {
 			if closeErr := logs.Close(); closeErr != nil {
 				logger.Error(ctx, "failed to close container logs", zap.Error(closeErr))
